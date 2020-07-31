@@ -106,9 +106,10 @@ function App() {
     <Container fluid style={{"backgroundColor":"#848ccf"}}>
       <Row>
         <Col style={{"border":"2px solid green"}} md={{ span: 8, offset: 2 }} >
+        <Heading>Budget Calculator By Arslan Ahmed Shaad <br/>email: ashi3610@gmail.com<br/>phone:+923338048724</Heading>
           {alert.status && <Alert onClose={() => setAlert({status:false})} dismissible variant={alert.type}>{alert.message}</Alert>}
         
-          <Heading>Budget Calculator</Heading>
+          
           <ExpenseForm 
             charge = {charge}
             amount = {amount}

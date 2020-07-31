@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { MdEdit,MdDelete } from "react-icons/md";
+import ReactTooltip from 'react-tooltip';
 
 const Item = styled.li`
     background-color: white;
@@ -51,8 +52,16 @@ export const ExpenseItem = ({id, amount,charge,handleDelete,handleEdit}) => {
                 <Charge >{charge}</Charge>
                 <Amount >{amount}</Amount>
             </Wrapper>
-            <Button onClick={()=>{handleEdit(id)}}><MdEdit/></Button>
-            <Button onClick={()=>{handleDelete(id)}}><MdDelete/></Button>
+            <Button
+                data-tip="<b>Edit</b>"
+                data-html={true}
+                data-type="warning"
+                onClick={()=>{handleEdit(id)}}><MdEdit/><ReactTooltip effect="solid" /></Button>
+            <Button
+                data-tip="<b>Delete</b>"
+                data-html={true}
+                data-type="error"
+             onClick={()=>{handleDelete(id)}}><MdDelete/></Button>
         </Item>
     )
 }
